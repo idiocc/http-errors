@@ -1,6 +1,6 @@
 import '../types/externs'
-import myNewPackage from './'
+import httpErrors from './'
 
 module.exports = {
-  '_myNewPackage': myNewPackage,
+  '_httpErrors': httpErrors,
 }

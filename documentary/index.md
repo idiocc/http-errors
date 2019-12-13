@@ -1,11 +1,11 @@
-# my-new-package
+# @goa/http-errors
 
-%NPM: my-new-package%
+%NPM: @goa/http-errors%
 
-`my-new-package` is {{ description }}
+`@goa/http-errors` is Creates HTTP Errors For Goa Apps.
 
 ```sh
-yarn add my-new-package
+yarn add @goa/http-errors
 ```
 
 ## Table Of Contents

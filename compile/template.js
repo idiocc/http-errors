@@ -1,12 +1,12 @@
-const { _myNewPackage } = require('./mnp')
+const { _httpErrors } = require('./http-errors')
 
 /**
- * @methodType {_myNewPackage.myNewPackage}
+ * @methodType {_httpErrors.httpErrors}
  */
-function myNewPackage(config) {
-  return _myNewPackage(config)
+function httpErrors(config) {
+  return _httpErrors(config)
 }
 
-module.exports = myNewPackage
+module.exports = httpErrors
 
 /* typal types/index.xml namespace */

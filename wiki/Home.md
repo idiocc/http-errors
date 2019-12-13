@@ -1,1 +1,1 @@
-{{ description }}
+Creates HTTP Errors For Goa Apps.

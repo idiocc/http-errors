@@ -1,7 +1,7 @@
-import myNewPackage from '../src'
+import httpErrors from '../src'
 
 (async () => {
-  const res = await myNewPackage({
+  const res = await httpErrors({
     text: 'example',
   })
   console.log(res)

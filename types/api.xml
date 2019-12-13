@@ -1,6 +1,6 @@
-<types namespace="_myNewPackage">
-  <method name="myNewPackage" async return="string">
-    <arg type="!_myNewPackage.Config" name="config">The config.</arg>
-    {{ description }}
+<types namespace="_httpErrors">
+  <method name="httpErrors" async return="string">
+    <arg type="!_httpErrors.Config" name="config">The config.</arg>
+    Creates HTTP Errors For Goa Apps.
   </method>
 </types>
