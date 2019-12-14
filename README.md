@@ -66,7 +66,7 @@ goa.listen(async function() {
   this.close()
 })
 ```
-```
+```js
 { body: 'Please login to view this page.',
   headers: 
    { 'content-type': 'text/plain; charset=utf-8',
@@ -77,13 +77,71 @@ goa.listen(async function() {
   statusMessage: 'Unauthorized' }
 ```
 
-<p align="center"><a href="#table-of-contents">
-  <img src="/.documentary/section-breaks/2.svg?sanitize=true">
-</a></p>
+Another example that extends the given error. _Koa_ will automatically set status **404** for errors with `ENOENT` code.
 
-<p align="center"><a href="#table-of-contents">
-  <img src="/.documentary/section-breaks/3.svg?sanitize=true">
-</a></p>
+```js
+import { aqt } from 'rqt'
+import { readFile } from 'fs'
+import createError from '@goa/http-errors'
+import Goa from '@goa/koa'
+import { join } from 'path'
+
+const goa = new Goa()
+
+goa.use(async (ctx) => {
+  await new Promise((r, j) => {
+    readFile(join('example', ctx.path), (err) => {
+      let httpError
+      if (err.code == 'ENOENT') {
+        httpError = createError(404, err, { expose: false })
+      } else {
+        httpError = createError(500, err)
+      }
+      j(httpError)
+    })
+  })
+})
+goa.listen(async function() {
+  // 404
+  console.log('Request missing file')
+  let url = `http://localhost:${this.address().port}/missing.txt`
+  let res = await aqt(url)
+  console.log(res)
+  // 500
+  console.log('\nRequest a dir')
+  url = `http://localhost:${this.address().port}/dir`
+  res = await aqt(url)
+  console.log(res)
+  this.close()
+})
+```
+```js
+Request missing file
+{ body: 'Not Found',
+  headers: 
+   { 'content-type': 'text/plain; charset=utf-8',
+     'content-length': '9',
+     date: 'Sat, 14 Dec 2019 18:04:34 GMT',
+     connection: 'close' },
+  statusCode: 404,
+  statusMessage: 'Not Found' }
+
+Request a dir
+{ body: 'Internal Server Error',
+  headers: 
+   { 'content-type': 'text/plain; charset=utf-8',
+     'content-length': '21',
+     date: 'Sat, 14 Dec 2019 18:04:34 GMT',
+     connection: 'close' },
+  statusCode: 500,
+  statusMessage: 'Internal Server Error' }
+```
+
+The app will write to _stderr_ on internal error:
+
+```
+Error: EISDIR: illegal operation on a directory, read
+```
 
 ## Copyright & License
 
