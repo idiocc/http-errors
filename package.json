@@ -1,6 +1,6 @@
 {
   "name": "@goa/http-errors",
-  "version": "0.0.0-pre",
+  "version": "1.0.0",
   "description": "Creates HTTP Errors For Goa Apps.",
   "main": "compile/index.js",
   "module": "src/index.js",
