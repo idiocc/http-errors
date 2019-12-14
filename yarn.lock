@@ -12,6 +12,18 @@
   resolved "https://registry.yarnpkg.com/@externs/nodejs/-/nodejs-1.5.0.tgz#88ff9e7a03c53d19101ee49768e598ff0f39c9ad"
   integrity sha512-2J+FRDjGfKKldTQ5YqLmhQ04/sA9swTQ6OTtPzo4xhg41u1+eiufciXiqW6u3UXEcmm413a27NakgnLbzfp0wQ==
 
+"@goa/koa@^1.1.5":
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@goa/koa/-/koa-1.1.5.tgz#5206607d49c0b23a97355a5a089040fa5bdd0e73"
+  integrity sha512-GE2PbI3Cda0vJAHlo5wAU3lD5qE7CQqqiITrmmx0YQmIPqzJlj7K9m1LR8RDi4Ax6775uQ2TO/mQDvcgmxGtXw==
+  dependencies:
+    mime-db "^1.42.0"
+
+"@goa/statuses@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@goa/statuses/-/statuses-1.0.1.tgz#1ac83df2fbabb4b357e9f8bd7c5638dd1f21b27f"
+  integrity sha512-gBhnn5XnasK9Vb4Diy0r71qU2LXpyx6ewsG4da/rxeY8N4xUTS78w1RS+KcdetBGBB2yYkdxblXyV4AwT1q+IA==
+
 "@zoroaster/assert@^1.0.2":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@zoroaster/assert/-/assert-1.0.2.tgz#8ffe2ebb10c81d570d4965080f942af688321a1f"
@@ -27,6 +39,11 @@ alamode@^3.0.0, alamode@^3.2.0:
   resolved "https://registry.yarnpkg.com/alamode/-/alamode-3.2.0.tgz#ee79dcf2483b5e28e9aac8cd0dfdc692aa333ca5"
   integrity sha512-jDV6kYpIf9jHJUre1OOotW8EM2Qy58S/eOks2MWhjNz2xJQdEfyzFKbcdaZowC8sk5DKxsnapf/mZNE53B3haQ==
 
+alamode@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/alamode/-/alamode-3.3.0.tgz#5a73ebb8eae847934f747d67c2680698061b7bbe"
+  integrity sha512-/Xi0rZ0HAyobAIi8DJQMeFF3kRrr15PGuYRwvxmQaOqSO3WJgXOsmhL6sZQuvD/okZztzujMxMA+21WOD2rYyQ==
+
 depack@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/depack/-/depack-1.0.1.tgz#4b3c2a9bff91cf31466d148101336a8329db7f09"
@@ -35,14 +52,14 @@ depack@^1.0.1:
     "@depack/nodejs" "^1.1.4"
     "@externs/nodejs" "^1.5.0"
 
-documentary@^1.34.1:
-  version "1.34.1"
-  resolved "https://registry.yarnpkg.com/documentary/-/documentary-1.34.1.tgz#0b556051b9d1c28dcd52527332fab5bcffa117b9"
-  integrity sha512-Gi7XJ9KQYOxObCEFq0rjmP0c7CVhlo1KTz1aw17qq4P7LGkS7YRN/5PWxPOM1a/87kWIOV/zekn5ZaoWdH9sMQ==
+documentary@^1.34.2:
+  version "1.34.2"
+  resolved "https://registry.yarnpkg.com/documentary/-/documentary-1.34.2.tgz#f2c2825d83d0c9258a1175ec8bf363220862f751"
+  integrity sha512-gXAfg9kuTTIXhbOYPfNkrSpKsupMlg2ti3zLwYLh/X4Hzey6pEDvHoFOvkjzLgruc80DJjOdXl/f0ZkbV3QB0g==
   dependencies:
-    alamode "^3.0.0"
-    preact "8.5.2"
-    typal "^1.22.6"
+    alamode "^3.2.0"
+    preact "8.5.3"
+    typal "^1.22.9"
 
 erte@^1.2.0:
   version "1.2.0"
@@ -54,15 +71,25 @@ eslint-config-artdeco@1.0.1:
   resolved "https://registry.yarnpkg.com/eslint-config-artdeco/-/eslint-config-artdeco-1.0.1.tgz#4451c9d0ed1ce4d33dfd43a6315f12c8bfb04274"
   integrity sha1-RFHJ0O0c5NM9/UOmMV8SyL+wQnQ=
 
-preact@8.5.2:
-  version "8.5.2"
-  resolved "https://registry.yarnpkg.com/preact/-/preact-8.5.2.tgz#2f532da485287c07369e08150cf4d23921a09789"
-  integrity sha512-37tlDJGq5IQKqGUbqPZ7qPtsTOWFyxe+ojAOFfzKo0dEPreenqrqgJuS83zGpeGAqD9h9L9Yr7QuxH2W4ZrKxg==
+mime-db@^1.42.0:
+  version "1.42.0"
+  resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.42.0.tgz#3e252907b4c7adb906597b4b65636272cf9e7bac"
+  integrity sha512-UbfJCR4UAVRNgMpfImz05smAXK7+c+ZntjaA26ANtkXLlOe947Aag5zdIcKQULAiF9Cq4WxBi9jUs5zkA84bYQ==
 
-typal@^1.22.6:
-  version "1.22.7"
-  resolved "https://registry.yarnpkg.com/typal/-/typal-1.22.7.tgz#fd0c13d670f662094f8f46c04aefd3f8be1e9fc0"
-  integrity sha512-U/YO1h9KA44bjwHqwBtZUQVHkWMZoB72X0wqShdQ+giQGd9n0f6efOesT71R8kGcewpAINNC8pSKim1P/z/Ogw==
+preact@8.5.3:
+  version "8.5.3"
+  resolved "https://registry.yarnpkg.com/preact/-/preact-8.5.3.tgz#78c2a5562fcecb1fed1d0055fa4ac1e27bde17c1"
+  integrity sha512-O3kKP+1YdgqHOFsZF2a9JVdtqD+RPzCQc3rP+Ualf7V6rmRDchZ9MJbiGTT7LuyqFKZqlHSOyO/oMFmI2lVTsw==
+
+rqt@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/rqt/-/rqt-4.0.0.tgz#b57f64bf1b3b8b8109617f9dc67b9dd9ea5cb4d6"
+  integrity sha512-DUm6ZAt6ESeY46aFWhQwBvsOpXABRL5TTkpN/3KJjog7uk2ncYuU4UZ8FQV6qfWybihkMFCdoESNSxYQ5rSZiQ==
+
+typal@^1.22.9:
+  version "1.22.9"
+  resolved "https://registry.yarnpkg.com/typal/-/typal-1.22.9.tgz#3c251d6843eee28d036be616f37960387a3bf156"
+  integrity sha512-wR4RwD7kh03rFpJrQ0pefUQBikBtAtAfwfWMXs0cdnxr3uKEADmhbfaJPfc0HpzkPloqMMXhImdePtJXxY0MVw==
 
 yarn-s@1.2.1:
   version "1.2.1"

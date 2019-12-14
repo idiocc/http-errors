@@ -1,6 +1,8 @@
 <types namespace="_httpErrors">
-  <method name="httpErrors" async return="string">
-    <arg type="!_httpErrors.Config" name="config">The config.</arg>
-    Creates HTTP Errors For Goa Apps.
+  <method name="httpErrors" return="!Error">
+    <arg number name="status">The status code as number.</arg>
+    <arg string name="message">The message. By default, will look up in the status code table.</arg>
+    <arg string name="props">Additional custom properties to attach to object.</arg>
+    Create a new error object with the given message msg. The error object inherits from createError.HttpError.
   </method>
 </types>

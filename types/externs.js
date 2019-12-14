@@ -2,22 +2,32 @@
  * @fileoverview
  * @externs
  */
-
 /* typal types/index.xml externs */
 /** @const */
 var _httpErrors = {}
 /**
- * Options for the program.
- * @record
+ * The error constructor that extends Error.
+ * @interface
  */
-_httpErrors.Config
+_httpErrors.HttpError
 /**
- * A boolean option. Default `true`.
- * @type {boolean|undefined}
+ * The status message.
+ * @type {number}
  */
-_httpErrors.Config.prototype.shouldRun
+_httpErrors.HttpError.prototype.status
 /**
- * A text to return.
- * @type {string|undefined}
+ * Can be an object of header names to values to be sent to the client, defaulting to `undefined`. When defined, the key names should all be lower-cased.
+ * @type {*}
  */
-_httpErrors.Config.prototype.text
+_httpErrors.HttpError.prototype.headers
+/**
+ * The status code.
+ * @type {string}
+ */
+_httpErrors.HttpError.prototype.statusCode
+/**
+ * Whether to expose the error to the client.
+ * For client errors the default is `true`, for server errors (status >= 500) is `false`.
+ * @type {boolean}
+ */
+_httpErrors.HttpError.prototype.expose
