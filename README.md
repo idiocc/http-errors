@@ -72,7 +72,7 @@ goa.listen(async function() {
   headers: 
    { 'content-type': 'text/plain; charset=utf-8',
      'content-length': '31',
-     date: 'Sat, 14 Dec 2019 17:35:52 GMT',
+     date: 'Sat, 14 Dec 2019 18:32:50 GMT',
      connection: 'close' },
   statusCode: 401,
   statusMessage: 'Unauthorized' }
@@ -122,7 +122,7 @@ Request missing file
   headers: 
    { 'content-type': 'text/plain; charset=utf-8',
      'content-length': '9',
-     date: 'Sat, 14 Dec 2019 18:04:34 GMT',
+     date: 'Sat, 14 Dec 2019 18:32:50 GMT',
      connection: 'close' },
   statusCode: 404,
   statusMessage: 'Not Found' }
@@ -132,7 +132,7 @@ Request a dir
   headers: 
    { 'content-type': 'text/plain; charset=utf-8',
      'content-length': '21',
-     date: 'Sat, 14 Dec 2019 18:04:34 GMT',
+     date: 'Sat, 14 Dec 2019 18:32:50 GMT',
      connection: 'close' },
   statusCode: 500,
   statusMessage: 'Internal Server Error' }
@@ -153,12 +153,18 @@ Error: EISDIR: illegal operation on a directory, read
 A new error could be created from a name or code, like so:
 
 ```js
+import createError from '@goa/http-errors'
+
+const err = new createError.NotFound()
+console.log(err)
+```
+```js
 { NotFoundError: Not Found
-    at Object.<anonymous> (/Users/zavr/goa/http-errors/example/constructor.js:3:13)
+    at Object.<anonymous> (example/constructor.js:3:13)
     at Module._compile (module.js:653:30)
-    at Module.p._compile (/Users/zavr/goa/http-errors/node_modules/documentary/node_modules/alamode/compile/depack.js:49:18)
+    at Module.p._compile (node_modules/documentary/node_modules/alamode/compile/depack.js:49:18)
     at Module._extensions..js (module.js:664:10)
-    at Object.k.(anonymous function).y._extensions.(anonymous function) [as .js] (/Users/zavr/goa/http-errors/node_modules/documentary/node_modules/alamode/compile/depack.js:51:7)
+    at Object.k.(anonymous function).y._extensions.(anonymous function) [as .js] (node_modules/documentary/node_modules/alamode/compile/depack.js:51:7)
     at Module.load (module.js:566:32)
     at tryModuleLoad (module.js:506:12)
     at Function.Module._load (module.js:498:3)
@@ -167,8 +173,9 @@ A new error could be created from a name or code, like so:
   message: 'Not Found',
   status: 404,
   statusCode: 404,
-  name: 'NotFoundError',
-  expose: true }
+  expose: true,
+  headers: null,
+  name: 'NotFoundError' }
 ```
 
 It's not possible to import specific errors as they are properties on the exported function, and not exports themselves.

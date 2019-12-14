@@ -30,7 +30,8 @@ The app will write to _stderr_ on internal error:
 
 A new error could be created from a name or code, like so:
 
-%FORK-js example/constructor%
+%EXAMPLE: example/constructor, ../src => @goa/http-errors%
+%/FORK-js example/constructor%
 
 It's not possible to import specific errors as they are properties on the exported function, and not exports themselves.
 
