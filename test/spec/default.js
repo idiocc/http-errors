@@ -3,7 +3,7 @@ process.env.NO_DEPRECATION = 'http-errors'
 import { strictEqual, notStrictEqual } from 'assert'
 import { ok } from '@zoroaster/assert'
 import { isError } from 'util'
-import createError from '../../src'
+import createError, { HttpError } from '../../src'
 
 export const createErrorStatus = {
   'creates error object'() {
@@ -236,9 +236,9 @@ export const HTTPErrors = {
     })
     strictEqual(err.expose, false)
   },
-  // 'new createError.HttpError()'() {
+  // 'new HttpError()'() {
   //   throws(() => {
-  //     new createError.HttpError() // eslint-disable-line no-new
+  //     new HttpError() // eslint-disable-line no-new
   //   }, /cannot construct abstract class/)
   // },
   'new createError.NotFound()'() {
@@ -287,9 +287,9 @@ export const HTTPErrors = {
     ok((new createError.InternalServerError()) instanceof createError.InternalServerError)
   },
   'supports err instanceof HttpError'() {
-    ok(createError(404) instanceof createError.HttpError)
-    ok((new createError['404']()) instanceof createError.HttpError)
-    ok((new createError['500']()) instanceof createError.HttpError)
+    ok(createError(404) instanceof HttpError)
+    ok((new createError['404']()) instanceof HttpError)
+    ok((new createError['500']()) instanceof HttpError)
   },
   'supports isError()'() {
     /* eslint-disable node/no-deprecated-api */

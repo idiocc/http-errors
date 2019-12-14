@@ -14,6 +14,7 @@ yarn add @goa/http-errors
 - [API](#api)
   * [`HttpError`](#type-httperror)
 - [`httpErrors(status: number, message: string, props: string): !Error`](#httperrorsstatus-numbermessage-stringprops-string-error)
+- [new createError[code || name]([msg]))](#new-createerrorcode--namemsg)
 - [Copyright & License](#copyright--license)
 
 <p align="center"><a href="#table-of-contents">
@@ -142,6 +143,81 @@ The app will write to _stderr_ on internal error:
 ```
 Error: EISDIR: illegal operation on a directory, read
 ```
+
+<p align="center"><a href="#table-of-contents">
+  <img src="/.documentary/section-breaks/2.svg?sanitize=true">
+</a></p>
+
+## new createError[code || name]([msg]))
+
+A new error could be created from a name or code, like so:
+
+```js
+{ NotFoundError: Not Found
+    at Object.<anonymous> (/Users/zavr/goa/http-errors/example/constructor.js:3:13)
+    at Module._compile (module.js:653:30)
+    at Module.p._compile (/Users/zavr/goa/http-errors/node_modules/documentary/node_modules/alamode/compile/depack.js:49:18)
+    at Module._extensions..js (module.js:664:10)
+    at Object.k.(anonymous function).y._extensions.(anonymous function) [as .js] (/Users/zavr/goa/http-errors/node_modules/documentary/node_modules/alamode/compile/depack.js:51:7)
+    at Module.load (module.js:566:32)
+    at tryModuleLoad (module.js:506:12)
+    at Function.Module._load (module.js:498:3)
+    at Module.require (module.js:597:17)
+    at require (internal/module.js:11:18)
+  message: 'Not Found',
+  status: 404,
+  statusCode: 404,
+  name: 'NotFoundError',
+  expose: true }
+```
+
+It's not possible to import specific errors as they are properties on the exported function, and not exports themselves.
+
+**List of all constructors**
+
+|Status Code|Constructor Name             |
+|-----------|-----------------------------|
+|400        |BadRequest                   |
+|401        |Unauthorized                 |
+|402        |PaymentRequired              |
+|403        |Forbidden                    |
+|404        |NotFound                     |
+|405        |MethodNotAllowed             |
+|406        |NotAcceptable                |
+|407        |ProxyAuthenticationRequired  |
+|408        |RequestTimeout               |
+|409        |Conflict                     |
+|410        |Gone                         |
+|411        |LengthRequired               |
+|412        |PreconditionFailed           |
+|413        |PayloadTooLarge              |
+|414        |URITooLong                   |
+|415        |UnsupportedMediaType         |
+|416        |RangeNotSatisfiable          |
+|417        |ExpectationFailed            |
+|418        |ImATeapot                    |
+|421        |MisdirectedRequest           |
+|422        |UnprocessableEntity          |
+|423        |Locked                       |
+|424        |FailedDependency             |
+|425        |UnorderedCollection          |
+|426        |UpgradeRequired              |
+|428        |PreconditionRequired         |
+|429        |TooManyRequests              |
+|431        |RequestHeaderFieldsTooLarge  |
+|451        |UnavailableForLegalReasons   |
+|500        |InternalServerError          |
+|501        |NotImplemented               |
+|502        |BadGateway                   |
+|503        |ServiceUnavailable           |
+|504        |GatewayTimeout               |
+|505        |HTTPVersionNotSupported      |
+|506        |VariantAlsoNegotiates        |
+|507        |InsufficientStorage          |
+|508        |LoopDetected                 |
+|509        |BandwidthLimitExceeded       |
+|510        |NotExtended                  |
+|511        |NetworkAuthenticationRequired|
 
 ## Copyright & License
 

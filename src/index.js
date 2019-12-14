@@ -96,6 +96,8 @@ export class HttpError extends Error {
     this.message = message
     this.status = null
     this.statusCode = null
+    this.expose = false
+    this.headers = null
   }
   set code(code) {
     this.status = code
