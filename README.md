@@ -14,7 +14,7 @@ yarn add @goa/http-errors
 - [API](#api)
   * [`HttpError`](#type-httperror)
 - [`httpErrors(status: number, message: string, props: string): !Error`](#httperrorsstatus-numbermessage-stringprops-string-error)
-- [new createError[code || name]([msg]))](#new-createerrorcode--namemsg)
+- [new createError.ErrorType([msg]))](#new-createerrorerrortypemsg)
 - [Copyright & License](#copyright--license)
 
 <p align="center"><a href="#table-of-contents">
@@ -148,7 +148,7 @@ Error: EISDIR: illegal operation on a directory, read
   <img src="/.documentary/section-breaks/2.svg?sanitize=true">
 </a></p>
 
-## new createError[code || name]([msg]))
+## new createError.ErrorType([msg]))
 
 A new error could be created from a name or code, like so:
 

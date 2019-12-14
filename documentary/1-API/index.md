@@ -26,7 +26,7 @@ The app will write to _stderr_ on internal error:
 
 %~%
 
-## new createError[code || name]([msg]))
+## new createError.ErrorType([msg]))
 
 A new error could be created from a name or code, like so:
 
